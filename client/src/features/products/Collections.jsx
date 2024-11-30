@@ -1,6 +1,7 @@
 import { useState } from "react";
 import plusIcon from '../../assets/img/icon-plus.svg';
 import minusIcon from '../../assets/img/icon-minus.svg';
+import './productPage.css';
 import thumbnail1 from '../../assets/img/image-product-1-thumbnail.jpg';
 import thumbnail2 from '../../assets/img/image-product-2-thumbnail.jpg';
 import thumbnail3 from '../../assets/img/image-product-3-thumbnail.jpg';
@@ -45,16 +46,17 @@ const Collections = () => {
     return (
         <>
             <div className="productContainer">
-                <div className="leftContainer">
+                <div className="leftProductContainer">
                     <div className="imageContainer">
                         <
                             img
                             src={images[index]}
                             alt="large product image"
                             onClick={toggleLightBox}
+                            className="mainImage"
                             />
                     </div>
-                    <div className="thumbnailContainer">
+                    <div className="thumbnailsContainer">
                         {
                             thumbnails.map((item, indx) => {
                                 return (
@@ -64,7 +66,7 @@ const Collections = () => {
                                         src={item}
                                         alt="small product image"
                                         onClick={() => displayImage(indx)}
-                                        className={index == indx ? 'currentlyDisplayed' : ''}
+                                        className={index == indx ? 'currentlyDisplayed thumbnailImage' : 'thumbnailImage'}
                                         />
                                 )
                             })
@@ -84,9 +86,9 @@ const Collections = () => {
                         <p className="originalPrice">$250.00</p>
                     </div>
                     <div className="amountContainer">
-                        <img className="minus symbol" src={minusIcon} alt="minus symbol" onClick={removeOne} />
+                        <img className="minus" src={minusIcon} alt="minus symbol" onClick={removeOne} />
                         <span>{amount}</span>
-                        <img className="plus symbol" src={plusIcon} alt="plus symbol" onClick={addOne} />
+                        <img className="plus" src={plusIcon} alt="plus symbol" onClick={addOne} />
                         <button>Add to cart</button>
                     </div>
                 </div>

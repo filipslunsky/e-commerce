@@ -35,3 +35,62 @@
     height: 40px;
     margin: 15px;
 }
+
+.menuIcon {
+    display: none;
+    height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.mobileMenu {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mobileMenu .navItem {
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+@media screen and (max-width: 768px) {
+    .navContainer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .menuIcon {
+        display: block;
+        height: 20px;
+    }
+
+    .leftContainer {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .navItemsContainer {
+        display: none;
+    }
+
+    .navItemsContainer.mobileMenu {
+        display: flex;
+    }
+
+    .cartIcon, .userImg {
+        margin: 0 10px;
+    }
+}

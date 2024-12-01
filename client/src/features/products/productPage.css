@@ -99,33 +99,29 @@
     display: flex;
     justify-content: center;
     height: 35px;
-    width: 30%;
-    /* align-items: center;
-    justify-items: stretch; */
+    width: 35%;
 }
 
 .plusButton, .minusButton, .amountNumber {
     background-color: rgb(232, 232, 232);
     border: none;
-    /* height: 45px; */
-    width: 25px;
+    width: 33%;
+    place-content: center;
 }
 
     .minusButton {
-        /* padding: 8px 22px; */
         border-radius: 5px 0 0 5px;
-        
+        cursor: pointer;
     }
 
     .plusButton {
-        /* padding: 4px 22px; */
         border-radius: 0 5px 5px 0;
+        cursor: pointer;
     }
 
 .amountNumber {
     font-size: 18px;
-    align-items: center;
-    /* padding: 7px 15px 0 15px; */
+    text-align: center;
 }
 
 .addCartButton {
@@ -139,6 +135,7 @@
     border: none;
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgba(255, 165, 0, 0.2);
+    cursor: pointer;
 }
 
 .cartIconWhite {
@@ -279,7 +276,8 @@
     }
 
     .addCartButton {
-        width: 100%;
+        width: 99%;
+        margin-top: 5px;
     }
 
     .plusButton, .amountNumber, .minusButton {

@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -11,6 +11,12 @@ app.listen(PORT, () => {
 });
 
 app.use(cors());
+
+app.use('/uploads', express.static(path.join(__dirname, '/config/uploads')));
+app.get('/products', (req, res) => {
+    const products = require('./config/data/data.json');
+    res.json(products);
+});
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
 app.get("*", (req, res) => {

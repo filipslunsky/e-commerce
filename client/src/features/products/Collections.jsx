@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getProducts } from "./state/slice";
 import plusIcon from '../../assets/img/icon-plus.svg';
 import minusIcon from '../../assets/img/icon-minus.svg';
 import cartIcon from '../../assets/img/icon-cart-white.svg';
@@ -20,8 +22,16 @@ const Collections = () => {
     const [index, setIndex] = useState(0);
     const [lightBox, setLightBox] = useState(false);
 
+    const dispatch = useDispatch();
+    const products = useSelector((state) => state.products.products);
+    const status = useSelector((state) => state.products.status);
+
     const thumbnails = [thumbnail1, thumbnail2, thumbnail3, thumbnail4];
     const images = [image1, image2, image3, image4];
+
+    useEffect(() => {
+        dispatch(getProducts());
+    }, []);
 
     const displayImage = (index) => {
         setIndex(index);
@@ -46,6 +56,9 @@ const Collections = () => {
     const toggleLightBox = () => {
         setLightBox(!lightBox);
     };
+
+
+    if (status !== 'success') return (<><h2>Loading...</h2></>);
 
     return (
         <>

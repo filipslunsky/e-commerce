@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Fall Limited Edition Sneakers",
+        "manufacturer": "SNEAKER COMPANY",
+        "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
+        "originalPrice": 250.00,
+        "discountInPercent": 50,
+        "currentPrice": 125.00,
+        "category": "collections",
+        "thumbnails": [
+            "uploads/image-product-1-thumbnail.jpg",
+            "uploads/image-product-2-thumbnail.jpg",
+            "uploads/image-product-3-thumbnail.jpg",
+            "uploads/image-product-4-thumbnail.jpg"
+        ],
+        "images": [
+            "uploads/image-product-1.jpg",
+            "uploads/image-product-2.jpg",
+            "uploads/image-product-3.jpg",
+            "uploads/image-product-4.jpg"
+        ]
+    },{
+        "id": 2,
+        "name": "Fall Limited Edition Sneakers for Men",
+        "manufacturer": "SNEAKER COMPANY",
+        "description": "These low-profile sneakers are your perfect casual wear companion for men. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
+        "originalPrice": 250.00,
+        "discountInPercent": 50,
+        "currentPrice": 125.00,
+        "category": "men",
+        "thumbnails": [
+            "uploads/image-product-1-thumbnail.jpg",
+            "uploads/image-product-2-thumbnail.jpg",
+            "uploads/image-product-3-thumbnail.jpg",
+            "uploads/image-product-4-thumbnail.jpg"
+        ],
+        "images": [
+            "uploads/image-product-1.jpg",
+            "uploads/image-product-2.jpg",
+            "uploads/image-product-3.jpg",
+            "uploads/image-product-4.jpg"
+        ]
+    },{
+        "id": 3,
+        "name": "Fall Limited Edition Sneakers for Women",
+        "manufacturer": "SNEAKER COMPANY",
+        "description": "These low-profile sneakers are your perfect casual wear companion for women. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
+        "originalPrice": 250.00,
+        "discountInPercent": 50,
+        "currentPrice": 125.00,
+        "category": "women",
+        "thumbnails": [
+            "uploads/image-product-1-thumbnail.jpg",
+            "uploads/image-product-2-thumbnail.jpg",
+            "uploads/image-product-3-thumbnail.jpg",
+            "uploads/image-product-4-thumbnail.jpg"
+        ],
+        "images": [
+            "uploads/image-product-1.jpg",
+            "uploads/image-product-2.jpg",
+            "uploads/image-product-3.jpg",
+            "uploads/image-product-4.jpg"
+        ]
+    }
+]

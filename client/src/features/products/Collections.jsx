@@ -92,10 +92,9 @@ const Collections = () => {
                     </div>
                     <div className="amountContainer">
                         <div className="calculateContainer">
-                            {/* put images to buttons and restyle */}
-                            <img className="minusButton" src={minusIcon} alt="minus symbol" onClick={removeOne} />
+                            <button className="minusButton" onClick={removeOne}><img src={minusIcon} alt="minus symbol" /></button>
                             <span className="amountNumber">{amount}</span>
-                            <img className="plusButton" src={plusIcon} alt="plus symbol" onClick={addOne} />
+                            <button className="plusButton" onClick={addOne}><img src={plusIcon} alt="plus symbol" /></button>
                         </div>
                         <button className="addCartButton"><img src={cartIcon} alt="cart icon" className="cartIconWhite" /><span className="addCartButtonText"></span>Add to cart</button>
                     </div>

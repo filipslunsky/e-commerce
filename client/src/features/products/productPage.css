@@ -97,25 +97,35 @@
 
 .calculateContainer {
     display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 30%;
+    /* align-items: center;
+    justify-items: stretch; */
 }
 
 .plusButton, .minusButton, .amountNumber {
     background-color: rgb(232, 232, 232);
+    border: none;
+    /* height: 45px; */
+    width: 25px;
 }
 
-.minusButton {
-    padding: 16px 22px;
-    border-radius: 5px 0 0 5px;
-}
+    .minusButton {
+        /* padding: 8px 22px; */
+        border-radius: 5px 0 0 5px;
+        
+    }
 
-.plusButton {
-    padding: 12px 22px;
-    border-radius: 0 5px 5px 0;
-}
+    .plusButton {
+        /* padding: 4px 22px; */
+        border-radius: 0 5px 5px 0;
+    }
 
 .amountNumber {
     font-size: 18px;
-    padding: 7px 15px;
+    align-items: center;
+    /* padding: 7px 15px 0 15px; */
 }
 
 .addCartButton {
@@ -273,7 +283,7 @@
     }
 
     .plusButton, .amountNumber, .minusButton {
-        padding: 12%;
+        
     }
 }
 

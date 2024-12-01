@@ -2,6 +2,9 @@ import { useState } from "react";
 import plusIcon from '../../assets/img/icon-plus.svg';
 import minusIcon from '../../assets/img/icon-minus.svg';
 import cartIcon from '../../assets/img/icon-cart-white.svg';
+import closeIcon from '../../assets/img/icon-close.svg';
+import nextIcon from '../../assets/img/icon-next.svg';
+import previousIcon from '../../assets/img/icon-previous.svg';
 import './productPage.css';
 import thumbnail1 from '../../assets/img/image-product-1-thumbnail.jpg';
 import thumbnail2 from '../../assets/img/image-product-2-thumbnail.jpg';
@@ -97,7 +100,34 @@ const Collections = () => {
                 lightBox
                 ?
                 <div className="lightBoxContainer">
-                    <h2>lightBox</h2>
+                    <div className="lightBoxImageContainer">
+                        <button onClick={toggleLightBox} className="closeButton"><img src={closeIcon} alt="cross icon" /></button>
+                        <
+                            img
+                            src={images[index]}
+                            alt="large product image"
+                            onClick={toggleLightBox}
+                            className="lightBoxMainImage"
+                            />
+                            <button onClick={displayPrevImage} className="previousButton"><img src={previousIcon} alt="left arrow" /></button>
+                            <button onClick={displayNextImage} className="nextButton"><img src={nextIcon} alt="right arrow" /></button>
+                    </div>
+                    <div className="lightBoxThumbnailsContainer">
+                        {
+                            thumbnails.map((item, indx) => {
+                                return (
+                                        <
+                                        img
+                                        key={indx}
+                                        src={item}
+                                        alt="small product image"
+                                        onClick={() => displayImage(indx)}
+                                        className={index == indx ? 'currentlyDisplayed lightBoxThumbnailImage' : 'lightBoxThumbnailImage'}
+                                        />
+                                )
+                            })
+                        }
+                    </div>
                 </div>
                 :
                 ''

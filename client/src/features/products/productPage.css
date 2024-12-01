@@ -135,7 +135,46 @@
 .lightBoxContainer {
     z-index: 2;
     position: absolute;
-    top: 300px;
+    top: 110px;
     width: 100%;
     text-align: center;
 }
+
+.lightBoxMainImage {
+    width: 550px;
+    border-radius: 25px;
+}
+
+.lightBoxThumbnailImage {
+    width: 60px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.closeButton {
+    position: relative;
+    left: 560px;
+    bottom: 560px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.nextButton, .previousButton {
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    position: relative;
+    bottom: 280px;
+}
+
+.nextButton {
+    right: 45px;
+}
+
+.previousButton {
+    right: 565px;
+}
+

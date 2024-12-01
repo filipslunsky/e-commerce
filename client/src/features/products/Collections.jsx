@@ -58,7 +58,9 @@ const Collections = () => {
                             alt="large product image"
                             onClick={toggleLightBox}
                             className="mainImage"
-                            />
+                        />
+                        <button onClick={displayPrevImage} className="previousButtonMobile"><img src={previousIcon} alt="left arrow" /></button>
+                        <button onClick={displayNextImage} className="nextButtonMobile"><img src={nextIcon} alt="right arrow" /></button>
                     </div>
                     <div className="thumbnailsContainer">
                         {
@@ -89,9 +91,12 @@ const Collections = () => {
                         <p className="originalPrice">$250.00</p>
                     </div>
                     <div className="amountContainer">
-                        <img className="minusButton" src={minusIcon} alt="minus symbol" onClick={removeOne} />
-                        <span className="amountNumber">{amount}</span>
-                        <img className="plusButton" src={plusIcon} alt="plus symbol" onClick={addOne} />
+                        <div className="calculateContainer">
+                            {/* put images to buttons and restyle */}
+                            <img className="minusButton" src={minusIcon} alt="minus symbol" onClick={removeOne} />
+                            <span className="amountNumber">{amount}</span>
+                            <img className="plusButton" src={plusIcon} alt="plus symbol" onClick={addOne} />
+                        </div>
                         <button className="addCartButton"><img src={cartIcon} alt="cart icon" className="cartIconWhite" /><span className="addCartButtonText"></span>Add to cart</button>
                     </div>
                 </div>

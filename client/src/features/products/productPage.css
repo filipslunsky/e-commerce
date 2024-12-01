@@ -17,6 +17,10 @@
     border-radius: 20px;
 }
 
+.previousButtonMobile, .nextButtonMobile {
+    display: none;
+}
+
 .thumbnailsContainer {
     display: flex;
     justify-content: center;
@@ -89,6 +93,10 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.calculateContainer {
+    display: flex;
 }
 
 .plusButton, .minusButton, .amountNumber {
@@ -168,6 +176,7 @@
     padding: 5px;
     position: relative;
     bottom: 280px;
+    cursor: pointer;
 }
 
 .nextButton {
@@ -176,5 +185,95 @@
 
 .previousButton {
     right: 565px;
+}
+
+@media screen and (max-width: 768px) {
+    .lightBoxContainer {
+        display: none;
+    }
+
+    .lightBoxOn {
+        filter: brightness(1);
+        background-color: white;
+    }
+
+    .thumbnailsContainer {
+        display: none;
+    }
+
+    .leftProductContainer {
+        width: 100%;
+    }
+
+    .imageContainer {
+        width: 100%;
+        display: inline;
+    }
+
+    .mainImage {
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .previousButtonMobile, .nextButtonMobile {
+        display: inline;
+        height: 30px;
+        width: 30px;
+        border: none;
+        border-radius: 15px;
+        padding: 5px;
+        position: absolute;
+        top: 45%;
+        cursor: pointer;
+    }
+
+    .previousButtonMobile {
+        left: 3%;
+    }
+
+    .nextButtonMobile {
+        right: 3%;
+    }
+
+    .rightProductContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 100%;
+        padding: 15px 25px;
+    }
+
+    .priceContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .leftPriceContainer {
+        display: inline;
+    }
+    
+    .originalPrice {
+        display: inline;
+    }
+
+    .calculateContainer {
+        display: flex;
+        width: 100%;
+    }
+
+    .amountContainer {
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+    }
+
+    .addCartButton {
+        width: 100%;
+    }
+
+    .plusButton, .amountNumber, .minusButton {
+        padding: 12%;
+    }
 }
 

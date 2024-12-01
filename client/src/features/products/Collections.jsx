@@ -1,6 +1,7 @@
 import { useState } from "react";
 import plusIcon from '../../assets/img/icon-plus.svg';
 import minusIcon from '../../assets/img/icon-minus.svg';
+import cartIcon from '../../assets/img/icon-cart-white.svg';
 import './productPage.css';
 import thumbnail1 from '../../assets/img/image-product-1-thumbnail.jpg';
 import thumbnail2 from '../../assets/img/image-product-2-thumbnail.jpg';
@@ -45,7 +46,7 @@ const Collections = () => {
 
     return (
         <>
-            <div className="productContainer">
+            <div className={lightBox ? "productContainer lightBoxOn" : "productContainer"}>
                 <div className="leftProductContainer">
                     <div className="imageContainer">
                         <
@@ -81,18 +82,26 @@ const Collections = () => {
                     rubber outer sole, they'll withstand everything
                     the weather can offer.</p>
                     <div className="priceContainer">
-                        <p className="currentPrice">$125.00</p>
-                        <p className="discount">50%</p>
+                        <div className="leftPriceContainer"><span className="currentPrice">$125.00</span><span className="discount">50%</span></div>
                         <p className="originalPrice">$250.00</p>
                     </div>
                     <div className="amountContainer">
-                        <img className="minus" src={minusIcon} alt="minus symbol" onClick={removeOne} />
-                        <span>{amount}</span>
-                        <img className="plus" src={plusIcon} alt="plus symbol" onClick={addOne} />
-                        <button>Add to cart</button>
+                        <img className="minusButton" src={minusIcon} alt="minus symbol" onClick={removeOne} />
+                        <span className="amountNumber">{amount}</span>
+                        <img className="plusButton" src={plusIcon} alt="plus symbol" onClick={addOne} />
+                        <button className="addCartButton"><img src={cartIcon} alt="cart icon" className="cartIconWhite" /><span className="addCartButtonText"></span>Add to cart</button>
                     </div>
                 </div>
             </div>
+            {
+                lightBox
+                ?
+                <div className="lightBoxContainer">
+                    <h2>lightBox</h2>
+                </div>
+                :
+                ''
+            }
         </>
     );
 }

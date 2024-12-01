@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .leftProductContainer {
@@ -22,8 +23,8 @@
 }
 
 .thumbnailImage {
-    width: 13%;
-    margin: 5px;
+    width: 14%;
+    margin: 9px;
     border-radius: 5px;
 }
 
@@ -33,10 +34,108 @@
 }
 
 .rightProductContainer {
-    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 25%;
+    max-width: 35%;
 }
 
-.minus {
-    padding-bottom: 3px;
-    margin-right: 10px;
+.productMaufacturer {
+    color: orange;
+    font-size: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.productName {
+    font-size: 33px;
+    margin-top: 10px;
+    padding-top: 0px;
+}
+
+.productDescription {
+    font-size: 18px;
+    line-height: 190%;
+}
+
+.leftPriceContainer {
+    display: flex;
+    align-items: center;
+}
+
+.currentPrice {
+    font-size: 30px;
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+.discount {
+    color: orange;
+    font-size: 15px;
+    margin-left: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 238, 206); 
+}
+
+.originalPrice {
+    color: gray;
+    font-size: 15px;
+    text-decoration: line-through;
+}
+
+.amountContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.plusButton, .minusButton, .amountNumber {
+    background-color: rgb(232, 232, 232);
+}
+
+.minusButton {
+    padding: 16px 22px;
+    border-radius: 5px 0 0 5px;
+}
+
+.plusButton {
+    padding: 12px 22px;
+    border-radius: 0 5px 5px 0;
+}
+
+.amountNumber {
+    font-size: 18px;
+    padding: 7px 15px;
+}
+
+.addCartButton {
+    flex-grow: 2;
+    flex-shrink: 0;
+    margin: 0 5px;
+    height: 35px;
+    color: white;
+    font-size: 20px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(255, 165, 0, 0.2);
+}
+
+.cartIconWhite {
+    margin-right: 20px;
+}
+
+.lightBoxOn {
+    filter: brightness(0.35);
+    background-color: gray;
+}
+
+.lightBoxContainer {
+    z-index: 2;
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    text-align: center;
 }

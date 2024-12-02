@@ -33,24 +33,32 @@ const Cart = () => {
 
     return (
         <>
-            <h2>Shopping Cart</h2>
-            {
-                cart.map((item) => {
-                    return (
-                        <div key={item.id}>
-                            <h3>{item.name}</h3>
-                            <p>Made by: {item.manufacturer}</p>
-                            <button onClick={() => {handleAddOne(item.id)}}><img src={plusIcon} /></button>
-                            <p>Amount: {item.amount}</p>
-                            <button onClick={() => {handleRemoveOne(item.id)}}><img src={minusIcon} /></button>
-                            <p>Price per piece: ${item.currentPrice.toFixed(2)}</p>
-                            <p>Total price: ${(item.amount * item.currentPrice).toFixed(2)}</p>
-                            <button onClick={() => {handleRemoveCompletely(item.id)}}><img src={trashIcon} /></button>
-                        </div>
-                    )
-                })
-            }
-            <p>Total price of all: ${totalPrice.toFixed(2)} </p>
+            <div className="mainCartContainer">
+                <h2 className="infoHeader">Shopping Cart</h2>
+                {
+                    cart.map((item) => {
+                        return (
+                            <div className="cartItemContainer" key={item.id}>
+                                <p className="cartItemName">{item.name}</p>
+                                <p className="cartItemManufacturer">Made by: {item.manufacturer}</p>
+                                <p className="cartPricePerPiece">Price per piece: <span className="cartPricePerPieceNumber">${item.currentPrice.toFixed(2)}</span></p>
+                                <div className="cartCalculateContainer">
+                                    <button className="cartMinusButton" onClick={() => {handleRemoveOne(item.id)}}><img src={minusIcon} /></button>
+                                    <p className="cartAmount">{item.amount}</p>
+                                    <button className="cartPlusButton" onClick={() => {handleAddOne(item.id)}}><img src={plusIcon} /></button>
+                                </div>
+                                <div className="cartPriceContainer">
+                                    <p className="cartItemTotalPrice">Total price: ${(item.amount * item.currentPrice).toFixed(2)}</p>
+                                    <button className="cartRemoveButton" onClick={() => {handleRemoveCompletely(item.id)}}><img src={trashIcon} /></button>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+                <div className="cartTotalPriceContainer">
+                   <p className="cartTotalPrice">Total price of all: ${totalPrice.toFixed(2)}</p>
+                </div>
+            </div>
         </>
     );
 }

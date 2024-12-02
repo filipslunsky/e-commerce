@@ -1,0 +1,99 @@
+.mainCartContainer {
+    place-items: center;
+}
+
+.cartItemContainer {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    background-color: rgb(255, 238, 206);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 20px;
+}
+
+.cartItemName {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.cartItemManufacturer {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.cartPricePerPiece {
+    margin-top: 0;
+}
+
+.cartPricePerPieceNumber {
+    font-weight: bold;
+}
+
+.cartCalculateContainer {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+}
+
+.cartMinusButton, .cartPlusButton {
+    border: none;
+    width: 60px;
+    height: 40px;
+    background-color: rgb(221, 219, 219);
+    cursor: pointer;
+}
+
+.cartMinusButton {
+    border-radius: 20px 0 0 20px;
+}
+
+.cartAmount {
+    padding: 11px 35px;
+    background-color: rgb(221, 219, 219);
+    
+}
+
+.cartPlusButton {
+    border-radius: 0 20px 20px 0;
+}
+
+.cartPriceContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartItemTotalPrice {
+    font-weight: bold;
+    border: 1px solid orange;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.cartRemoveButton {
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.cartRemoveButton:hover {
+    background-color: orange;
+}
+
+.cartTotalPriceContainer {
+    min-width: 500px;
+    text-align: right;
+}
+
+.cartTotalPrice {
+    font-size: 23px;
+    text-decoration: underline;
+}

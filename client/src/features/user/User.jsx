@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateFirstName, updateLastName, updateEmail, toggleFirstName, toggleLastName, toggleEmail } from "./state/slice";
-import { useEffect } from "react";
+import editIcon from '../../assets/img/edit-icon.png';
+import closeIconBlack from '../../assets/img/icon-close-black.svg';
+import './user.css';
 
 const User = () => {
     const dispatch = useDispatch();
@@ -37,55 +39,61 @@ const User = () => {
         dispatch(toggleEmail());
     };
 
-    useEffect(() => {
-        console.log(user);
-    }, []);
-
     return (
         <>
-            <h2>User</h2>
-            {
-                !user.editFirstName
-                ?
-                <div>
-                    <p>{user.firstName}</p>
-                    <button onClick={handleToggleFirstName}>edit</button>
+            <div className="mainUserContainer">
+                <div className="userContainer">
+                    <h2 className="infoHeader">User Information</h2>
+                    <div>
+                        {
+                            !user.editFirstName
+                            ?
+                            <div className="userItemContainer">
+                                <p className="firstName">{user.firstName}</p>
+                                <button className="userEditButton" onClick={handleToggleFirstName}><img className="editIcon" src={editIcon} /></button>
+                            </div>
+                            :
+                            <div className="userItemContainer">
+                                <input className="userInput" type="text" ref={firstNameRef} defaultValue={user.firstName} name="firstName" />
+                                <button className="userCancelButton" onClick={handleToggleFirstName}><img className="closeIconBlack" src={closeIconBlack} /></button>
+                                <button className="userOkButton" onClick={handleUpdateFirstName}>OK</button>
+                            </div>
+                        }
+                    </div>
+                    <div>
+                        {
+                            !user.editLastName
+                            ?
+                            <div className="userItemContainer">
+                                <p className="lastName">{user.lastName}</p>
+                                <button className="userEditButton" onClick={handleToggleLastName}><img className="editIcon" src={editIcon} /></button>
+                            </div>
+                            :
+                            <div className="userItemContainer">
+                                <input className="userInput" type="text" ref={lastNameRef} defaultValue={user.lastName} name="lastName" />
+                                <button className="userCancelButton" onClick={handleToggleLastName}><img className="closeIconBlack" src={closeIconBlack} /></button>
+                                <button className="userOkButton" onClick={handleUpdateLastName}>OK</button>
+                            </div>
+                        }
+                    </div>
+                    <div>
+                        {
+                            !user.editEmail
+                            ?
+                            <div className="userItemContainer">
+                                <p className="email">{user.email}</p>
+                                <button className="userEditButton" onClick={handleToggleEmail}><img className="editIcon" src={editIcon} /></button>
+                            </div>
+                            :
+                            <div className="userItemContainer">
+                                <input className="userInput" type="text" ref={emailRef} defaultValue={user.email} name="email" />
+                                <button className="userCancelButton" onClick={handleToggleEmail}><img className="closeIconBlack" src={closeIconBlack} /></button>
+                                <button className="userOkButton" onClick={handleUpdateEmail}>OK</button>
+                            </div>
+                        }
+                    </div>
                 </div>
-                :
-                <div>
-                    <input type="text" ref={firstNameRef} defaultValue={user.firstName} name="firstName" />
-                    <button onClick={handleToggleFirstName}>cancel</button>
-                    <button onClick={handleUpdateFirstName}>save</button>
-                </div>
-            }
-            {
-                !user.editLastName
-                ?
-                <div>
-                    <p>{user.lastName}</p>
-                    <button onClick={handleToggleLastName}>edit</button>
-                </div>
-                :
-                <div>
-                    <input type="text" ref={lastNameRef} defaultValue={user.lastName} name="lastName" />
-                    <button onClick={handleToggleLastName}>cancel</button>
-                    <button onClick={handleUpdateLastName}>save</button>
-                </div>
-            }
-            {
-                !user.editEmail
-                ?
-                <div>
-                    <p>{user.email}</p>
-                    <button onClick={handleToggleEmail}>edit</button>
-                </div>
-                :
-                <div>
-                    <input type="text" ref={emailRef} defaultValue={user.email} name="email" />
-                    <button onClick={handleToggleEmail}>cancel</button>
-                    <button onClick={handleUpdateEmail}>save</button>
-                </div>
-            }
+            </div>
         </>
     );
 }

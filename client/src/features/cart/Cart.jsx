@@ -3,6 +3,7 @@ import { addOnePiece, removeOnePiece, removeItem } from "./state/slice";
 import plusIcon from '../../assets/img/icon-plus.svg';
 import minusIcon from '../../assets/img/icon-minus.svg';
 import trashIcon from '../../assets/img/icon-delete.svg';
+import './cart.css';
 
 const Cart = () => {
     const cart = useSelector(state => state.cart.cart);
@@ -25,7 +26,7 @@ const Cart = () => {
     if (cart.length === 0) {
         return (
             <>
-                <p>Your shopping cart is empty.</p>
+                <p className="statusMessage">Your shopping cart is empty.</p>
             </>
         )
     }

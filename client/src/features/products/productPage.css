@@ -138,6 +138,10 @@
     cursor: pointer;
 }
 
+.addCartButton:hover {
+    box-shadow: 8px 5px 8px orange;
+}
+
 .cartIconWhite {
     margin-right: 20px;
 }

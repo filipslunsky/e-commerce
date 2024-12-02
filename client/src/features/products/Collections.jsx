@@ -8,14 +8,6 @@ import closeIcon from '../../assets/img/icon-close.svg';
 import nextIcon from '../../assets/img/icon-next.svg';
 import previousIcon from '../../assets/img/icon-previous.svg';
 import './productPage.css';
-import thumbnail1 from '../../assets/img/image-product-1-thumbnail.jpg';
-import thumbnail2 from '../../assets/img/image-product-2-thumbnail.jpg';
-import thumbnail3 from '../../assets/img/image-product-3-thumbnail.jpg';
-import thumbnail4 from '../../assets/img/image-product-4-thumbnail.jpg';
-import image1 from '../../assets/img/image-product-1.jpg';
-import image2 from '../../assets/img/image-product-2.jpg';
-import image3 from '../../assets/img/image-product-3.jpg';
-import image4 from '../../assets/img/image-product-4.jpg';
 
 const Collections = () => {
     const [amount, setAmount] = useState(0);
@@ -26,23 +18,26 @@ const Collections = () => {
     const products = useSelector((state) => state.products.products);
     const status = useSelector((state) => state.products.status);
 
-    const thumbnails = [thumbnail1, thumbnail2, thumbnail3, thumbnail4];
-    const images = [image1, image2, image3, image4];
+    const BASE_URL = `${import.meta.env.VITE_API_URL}`;
 
     useEffect(() => {
         dispatch(getProducts());
-    }, []);
+    }, [dispatch]);
+
+    const collectionProduct = products?.filter(product => product.category === 'collections') || [];
+    const thumbnailsFromBE = collectionProduct[0]?.thumbnails || [];
+    const imagesFromBE = collectionProduct[0]?.images || [];
 
     const displayImage = (index) => {
         setIndex(index);
     };
 
     const displayNextImage = () => {
-        index < images.length - 1 ? setIndex(index + 1) : setIndex(0);
+        index < imagesFromBE.length - 1 ? setIndex(index + 1) : setIndex(0);
     };
 
     const displayPrevImage = () => {
-        index > 0 ? setIndex(index - 1) : setIndex(images.length - 1);
+        index > 0 ? setIndex(index - 1) : setIndex(imagesFromBE.length - 1);
     };
 
     const addOne = () => {
@@ -57,8 +52,17 @@ const Collections = () => {
         setLightBox(!lightBox);
     };
 
+    if (status !== 'success') {
+        return <h2 className="statusMessage">Loading...</h2>;
+    };
 
-    if (status !== 'success') return (<><h2>Loading...</h2></>);
+    if (status === 'failed') {
+        return <h2 className="statusMessage">Ooops, something is wrong, the products could not be loaded. Please try again later...</h2>;
+    };
+
+    if (collectionProduct.length === 0 || !collectionProduct[0]) {
+        return <h2>No products available for the 'collections' category, please try a different one.</h2>;
+    };
 
     return (
         <>
@@ -67,7 +71,7 @@ const Collections = () => {
                     <div className="imageContainer">
                         <
                             img
-                            src={images[index]}
+                            src={`${BASE_URL}/${imagesFromBE[index]}`}
                             alt="large product image"
                             onClick={toggleLightBox}
                             className="mainImage"
@@ -77,12 +81,12 @@ const Collections = () => {
                     </div>
                     <div className="thumbnailsContainer">
                         {
-                            thumbnails.map((item, indx) => {
+                            thumbnailsFromBE.map((item, indx) => {
                                 return (
                                         <
                                         img
                                         key={indx}
-                                        src={item}
+                                        src={`${BASE_URL}/${item}`}
                                         alt="small product image"
                                         onClick={() => displayImage(indx)}
                                         className={index == indx ? 'currentlyDisplayed thumbnailImage' : 'thumbnailImage'}
@@ -93,15 +97,12 @@ const Collections = () => {
                     </div>
                 </div>
                 <div className="rightProductContainer">
-                    <h2 className="productMaufacturer">SNEAKER COMPANY</h2>
-                    <h3 className="productName">Fall Limited Edition Sneakers</h3>
-                    <p className="productDescription">These low-profile sneakers are your perfect
-                    casual wear companion. Featuring a durable
-                    rubber outer sole, they'll withstand everything
-                    the weather can offer.</p>
+                    <h2 className="productMaufacturer">{collectionProduct[0].manufacturer}</h2>
+                    <h3 className="productName">{collectionProduct[0].name}</h3>
+                    <p className="productDescription">{collectionProduct[0].description}</p>
                     <div className="priceContainer">
-                        <div className="leftPriceContainer"><span className="currentPrice">$125.00</span><span className="discount">50%</span></div>
-                        <p className="originalPrice">$250.00</p>
+                        <div className="leftPriceContainer"><span className="currentPrice">{collectionProduct[0].currentPrice}</span><span className="discount">{collectionProduct[0].discountInPercent}</span></div>
+                        <p className="originalPrice">{collectionProduct[0].originalPrice}</p>
                     </div>
                     <div className="amountContainer">
                         <div className="calculateContainer">
@@ -121,7 +122,7 @@ const Collections = () => {
                         <button onClick={toggleLightBox} className="closeButton"><img src={closeIcon} alt="cross icon" /></button>
                         <
                             img
-                            src={images[index]}
+                            src={`${BASE_URL}/${imagesFromBE[index]}`}
                             alt="large product image"
                             onClick={toggleLightBox}
                             className="lightBoxMainImage"
@@ -131,12 +132,12 @@ const Collections = () => {
                     </div>
                     <div className="lightBoxThumbnailsContainer">
                         {
-                            thumbnails.map((item, indx) => {
+                            thumbnailsFromBE.map((item, indx) => {
                                 return (
                                         <
                                         img
                                         key={indx}
-                                        src={item}
+                                        src={`${BASE_URL}/${item}`}
                                         alt="small product image"
                                         onClick={() => displayImage(indx)}
                                         className={index == indx ? 'currentlyDisplayed lightBoxThumbnailImage' : 'lightBoxThumbnailImage'}

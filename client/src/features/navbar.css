@@ -61,6 +61,20 @@
     border-bottom: 1px solid rgb(225, 225, 225);
 }
 
+.cartBadge {
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 13px;
+    position: absolute;
+    right: 110px;
+    top: 15px;
+    min-width: 17px;
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
     .navContainer {
         flex-direction: row;

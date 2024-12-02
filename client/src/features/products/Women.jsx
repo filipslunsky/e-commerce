@@ -107,7 +107,7 @@ const Women = () => {
                     <h3 className="productName">{collectionProduct[0].name}</h3>
                     <p className="productDescription">{collectionProduct[0].description}</p>
                     <div className="priceContainer">
-                        <div className="leftPriceContainer"><span className="currentPrice">${collectionProduct[0].currentPrice}</span><span className="discount">{collectionProduct[0].discountInPercent}</span></div>
+                        <div className="leftPriceContainer"><span className="currentPrice">${collectionProduct[0].currentPrice.toFixed(2)}</span><span className="discount">{collectionProduct[0].discountInPercent}</span></div>
                         <p className="originalPrice">${collectionProduct[0].originalPrice.toFixed(2)}</p>
                     </div>
                     <div className="amountContainer">

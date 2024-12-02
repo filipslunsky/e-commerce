@@ -1,11 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {};
+const initialState = {
+    user: {
+        firstName: "John",
+        lastName: "Doe",
+        email: "john.doe@sample.com",
+        editFirstName: false,
+        editLastName: false,
+        editEmail: false
+    }
+};
 
-const cartSlice = createSlice({
-    name: 'cart',
+const userSlice = createSlice({
+    name: 'user',
     initialState,
     reducers: {},
 });
 
-export default cartSlice.reducer;
+export default userSlice.reducer;

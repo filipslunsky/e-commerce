@@ -6,7 +6,7 @@ import Women from './features/products/Women';
 import Contact from './features/info/Contact';
 import About from './features/info/About';
 import User from './features/user/User';
-import Cart from './features/user/Cart';
+import Cart from './features/cart/Cart.jsx';
 
 function App() {
 

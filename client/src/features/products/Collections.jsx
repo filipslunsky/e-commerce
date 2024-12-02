@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "./state/slice";
+import { addItem } from "../cart/state/slice";
 import plusIcon from '../../assets/img/icon-plus.svg';
 import minusIcon from '../../assets/img/icon-minus.svg';
 import cartIcon from '../../assets/img/icon-cart-white.svg';
@@ -52,6 +53,11 @@ const Collections = () => {
         setLightBox(!lightBox);
     };
 
+    const addToCart = (id, name, manufacturer, currentPrice, amount) => {
+        if (amount === 0) return;
+        dispatch(addItem({id, name, manufacturer, currentPrice, amount}));
+    };
+
     if (status !== 'success') {
         return <h2 className="statusMessage">Loading...</h2>;
     };
@@ -101,8 +107,8 @@ const Collections = () => {
                     <h3 className="productName">{collectionProduct[0].name}</h3>
                     <p className="productDescription">{collectionProduct[0].description}</p>
                     <div className="priceContainer">
-                        <div className="leftPriceContainer"><span className="currentPrice">{collectionProduct[0].currentPrice}</span><span className="discount">{collectionProduct[0].discountInPercent}</span></div>
-                        <p className="originalPrice">{collectionProduct[0].originalPrice}</p>
+                        <div className="leftPriceContainer"><span className="currentPrice">${collectionProduct[0].currentPrice.toFixed(2)}</span><span className="discount">{collectionProduct[0].discountInPercent}</span></div>
+                        <p className="originalPrice">${collectionProduct[0].originalPrice.toFixed(2)}</p>
                     </div>
                     <div className="amountContainer">
                         <div className="calculateContainer">
@@ -110,7 +116,7 @@ const Collections = () => {
                             <span className="amountNumber">{amount}</span>
                             <button className="plusButton" onClick={addOne}><img src={plusIcon} alt="plus symbol" /></button>
                         </div>
-                        <button className="addCartButton"><img src={cartIcon} alt="cart icon" className="cartIconWhite" /><span className="addCartButtonText"></span>Add to cart</button>
+                        <button onClick={() => {addToCart(collectionProduct[0].id, collectionProduct[0].name, collectionProduct[0].manufacturer, collectionProduct[0].currentPrice, amount)}} className="addCartButton"><img src={cartIcon} alt="cart icon" className="cartIconWhite" /><span className="addCartButtonText"></span>Add to cart</button>
                     </div>
                 </div>
             </div>

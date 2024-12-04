@@ -19,6 +19,12 @@
     margin: 0 10px;
     text-decoration: none;
     color: gray;
+    padding: 26px 0px;
+}
+
+.navItem:hover {
+    color: black;
+    border-bottom: 3px solid orange;
 }
 
 .rightContainer {
@@ -34,6 +40,8 @@
 .userImg {
     height: 40px;
     margin: 15px;
+    border-radius: 20px;
+    border: 2px solid orange;
 }
 
 .menuIcon {
@@ -63,14 +71,14 @@
 
 .cartBadge {
     text-decoration: none;
-    font-size: 15px;
-    color: black;
+    font-size: 10px;
+    color: white;
     background-color: orange;
-    padding: 5px;
     border-radius: 13px;
     position: absolute;
-    right: 110px;
-    top: 15px;
+    right: 90px;
+    top: 40px;
+    z-index: 2;
     min-width: 17px;
     text-align: center;
 }
@@ -83,13 +91,13 @@
     position: absolute;
     top: 75px;
     right: 0;
-    z-index: 2;
+    z-index: 100;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    border-radius: 5px;
+    width: 350px;
     display: none;
+    transition: all 0.3s ease-in-out;
 }
 
 .smallCartNavContainer:hover .smallCartComponent {
@@ -128,7 +136,24 @@
     .cartIcon, .userImg {
         margin: 0 10px;
     }
-    /* .smallCartNavContainer .smallCartComponent {
-    
-    } */
+
+    .cartBadge {
+        top: 20px;
+        right: 70px;
+    }
+
+    .smallCartNavContainer .smallCartComponent {
+        position: fixed;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 500px;
+        height: auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+    }
 }

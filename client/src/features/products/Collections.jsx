@@ -53,9 +53,9 @@ const Collections = () => {
         setLightBox(!lightBox);
     };
 
-    const addToCart = (id, name, manufacturer, currentPrice, amount) => {
+    const addToCart = (id, name, manufacturer, currentPrice, amount, thumbnail) => {
         if (amount === 0) return;
-        dispatch(addItem({id, name, manufacturer, currentPrice, amount}));
+        dispatch(addItem({id, name, manufacturer, currentPrice, amount, thumbnail}));
     };
 
     if (status !== 'success') {
@@ -116,7 +116,7 @@ const Collections = () => {
                             <span className="amountNumber">{amount}</span>
                             <button className="plusButton" onClick={addOne}><img src={plusIcon} alt="plus symbol" /></button>
                         </div>
-                        <button onClick={() => {addToCart(collectionProduct[0].id, collectionProduct[0].name, collectionProduct[0].manufacturer, collectionProduct[0].currentPrice, amount)}} className="addCartButton"><img src={cartIcon} alt="cart icon" className="cartIconWhite" /><span className="addCartButtonText"></span>Add to cart</button>
+                        <button onClick={() => {addToCart(collectionProduct[0].id, collectionProduct[0].name, collectionProduct[0].manufacturer, collectionProduct[0].currentPrice, amount, `${BASE_URL}/${collectionProduct[0].thumbnails[0]}`)}} className="addCartButton"><img src={cartIcon} alt="cart icon" className="cartIconWhite" /><span className="addCartButtonText"></span>Add to cart</button>
                     </div>
                 </div>
             </div>

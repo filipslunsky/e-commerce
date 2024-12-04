@@ -18,7 +18,8 @@ const cartSlice = createSlice({
                     name: action.payload.name,
                     manufacturer: action.payload.manufacturer,
                     amount: action.payload.amount,
-                    currentPrice: action.payload.currentPrice
+                    currentPrice: action.payload.currentPrice,
+                    thumbnail: action.payload.thumbnail
                 });
             }
         },

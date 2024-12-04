@@ -1,0 +1,63 @@
+.smallCartHeading {
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.smallCartEmpty {
+    font-size: 15px;
+    color: gray;
+    text-align: center;
+    margin: 30px;
+}
+
+.smallCartItemsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.smallCartItemContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.smallCartItemImage {
+    height: 55px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.smallCartTextContainer {
+    margin: 10px;
+    font-size: 15px;
+}
+
+.smallCartText {
+    padding: 0;
+    line-height: 60%;
+}
+
+.smallCartBasicPrice {
+    color: gray;
+    margin-right: 10px;
+}
+
+.smallCartTotalPrice {
+    color: black;
+    font-weight: bold;
+}
+
+.smallCartRemoveButton {
+    background-color: inherit;
+    border: none;
+    margin-right: 10px;
+}
+
+.smallCartCheckoutButton {
+    background-color: orange;
+    color: white;
+    border: none;
+    height: 45px;
+    margin: 15px;
+    border-radius: 10px;
+}

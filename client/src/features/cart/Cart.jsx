@@ -4,6 +4,7 @@ import plusIcon from '../../assets/img/icon-plus.svg';
 import minusIcon from '../../assets/img/icon-minus.svg';
 import trashIcon from '../../assets/img/icon-delete.svg';
 import './cart.css';
+import { useEffect } from "react";
 
 const Cart = () => {
     const cart = useSelector(state => state.cart.cart);
@@ -22,6 +23,10 @@ const Cart = () => {
     };
 
     const totalPrice = cart.reduce((acc, item) => acc + item.amount * item.currentPrice, 0);
+
+    useEffect(() => {
+        console.log(cart);
+    }, [])
 
     if (cart.length === 0) {
         return (

@@ -133,8 +133,8 @@ const Collections = () => {
                             onClick={toggleLightBox}
                             className="lightBoxMainImage"
                             />
-                            <button onClick={displayPrevImage} className="previousButton"><img src={previousIcon} alt="left arrow" /></button>
-                            <button onClick={displayNextImage} className="nextButton"><img src={nextIcon} alt="right arrow" /></button>
+                            <button onClick={displayPrevImage} className="previousButton"><img className="controlIcon" src={previousIcon} alt="left arrow" /></button>
+                            <button onClick={displayNextImage} className="nextButton"><img className="controlIcon" src={nextIcon} alt="right arrow" /></button>
                     </div>
                     <div className="lightBoxThumbnailsContainer">
                         {

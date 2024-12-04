@@ -109,15 +109,15 @@
     place-content: center;
 }
 
-    .minusButton {
-        border-radius: 5px 0 0 5px;
-        cursor: pointer;
-    }
+.minusButton {
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+}
 
-    .plusButton {
-        border-radius: 0 5px 5px 0;
-        cursor: pointer;
-    }
+.plusButton {
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
 
 .amountNumber {
     font-size: 18px;

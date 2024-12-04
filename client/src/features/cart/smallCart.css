@@ -17,7 +17,7 @@
 
 .smallCartItemContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -28,18 +28,23 @@
 }
 
 .smallCartTextContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin: 10px;
     font-size: 15px;
 }
 
 .smallCartText {
     padding: 0;
-    line-height: 60%;
+    line-height: 90%;
+    text-align: left;
 }
 
 .smallCartBasicPrice {
     color: gray;
     margin-right: 10px;
+    margin-left: 0;
 }
 
 .smallCartTotalPrice {
@@ -51,6 +56,7 @@
     background-color: inherit;
     border: none;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .smallCartCheckoutButton {
@@ -60,4 +66,5 @@
     height: 45px;
     margin: 15px;
     border-radius: 10px;
+    cursor: pointer;
 }

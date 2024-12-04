@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Logo from "./Logo";
 import SmallCart from './cart/SmallCart';
 import cartIcon from '../assets/img/icon-cart.svg';
+import closeIcon from '../assets/img/icon-close-black.svg';
 import avatarImage from '../assets/img/image-avatar.png';
 import mobileMenuIcon from '../assets/img/icon-menu.svg';
 import './navbar.css';
@@ -29,6 +30,7 @@ const Navbar = () => {
             <img className='menuIcon' src={mobileMenuIcon} alt="menu icon" onClick={toggleMobileMenu} />
                 <Logo />
                 <div className={`navItemsContainer ${isMobileMenuOpen ? 'mobileMenu' : ''}`}>
+                    <button  onClick={closeMobileMenu} className='closeMobileMenuButton'><img className='closeMobileMenuIcon' src={closeIcon} alt="cross" /></button>
                     <Link onClick={closeMobileMenu} className='navItem' to={'/collections'}>Collections</Link>
                     <Link onClick={closeMobileMenu} className='navItem' to={'/men'}>Men</Link>
                     <Link onClick={closeMobileMenu} className='navItem' to={'/women'}>Women</Link>

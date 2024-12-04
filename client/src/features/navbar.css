@@ -53,20 +53,28 @@
 
 .mobileMenu {
     position: absolute;
-    top: 50px;
+    top: 0;
     left: 0;
-    width: 100%;
+    width: 60%;
+    min-height: 1200px;
     background-color: white;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 2;
 }
 
 .mobileMenu .navItem {
     padding: 15px;
     margin: 0;
     text-align: center;
-    border-bottom: 1px solid rgb(225, 225, 225);
+    color: black;
+}
+
+.closeMobileMenuButton {
+    display: none;
 }
 
 .cartBadge {
@@ -131,6 +139,16 @@
 
     .navItemsContainer.mobileMenu {
         display: flex;
+    }
+
+    .closeMobileMenuButton {
+        display: inline-block;
+        background-color: inherit;
+        margin-top: 15px;
+        border: none;
+        position: relative;
+        left: 90%;
+        cursor: pointer;
     }
 
     .cartIcon, .userImg {

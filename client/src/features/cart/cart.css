@@ -62,6 +62,10 @@
     border-radius: 0 20px 20px 0;
 }
 
+.cartMinusButton:hover, .cartPlusButton:hover {
+    background-color: gray
+}
+
 .cartPriceContainer {
     display: flex;
     justify-content: space-between;

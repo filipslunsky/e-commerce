@@ -32,6 +32,10 @@
     border-radius: 5px;
 }
 
+.thumbnailImage:hover {
+    opacity: 50%;
+}
+
 .currentlyDisplayed {
     border: 3px solid orange;
     opacity: 50%;
@@ -170,6 +174,10 @@
     margin: 0 10px;
 }
 
+.lightBoxThumbnailImage:hover {
+    opacity: 50%;
+}
+
 .closeButton {
     position: relative;
     left: 560px;
@@ -196,6 +204,30 @@
 
 .previousButton {
     right: 565px;
+}
+
+.controlIcon {
+    filter: none;
+    transition: filter 0.3s ease;
+}
+
+.previousButtonMobile:hover .controlIcon,
+.nextButtonMobile:hover .controlIcon {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(2000%) hue-rotate(-30deg) brightness(100%) contrast(90%);
+}
+
+.previousButton:hover .controlIcon,
+.nextButton:hover .controlIcon {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(2000%) hue-rotate(-30deg) brightness(100%) contrast(90%);
+}
+
+.closeButton img {
+    filter: none;
+    transition: filter 0.3s ease;
+}
+
+.closeButton:hover img {
+    filter: brightness(0) saturate(100%) invert(1) sepia(100%) saturate(2000%) hue-rotate(-30deg) brightness(90%) contrast(95%);
 }
 
 @media screen and (max-width: 768px) {

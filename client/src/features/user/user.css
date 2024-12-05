@@ -50,8 +50,10 @@
 }
 
 .userEditButton:hover, .userCancelButton:hover, .userOkButton:hover {
-    box-shadow: 3px 0px 3px;
+    cursor: pointer;
+    border: 2px solid black;
 }
+
 
 .userCancelButton {
     background-color: orange;

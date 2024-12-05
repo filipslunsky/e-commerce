@@ -14,15 +14,16 @@
 
 .cartItemName {
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 500;
     margin-bottom: 0px;
 }
 
 .cartItemManufacturer {
-    font-size: 20px;
-    margin-top: 0;
-    margin-bottom: 0;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-style: italic;
+    font-weight: 200;
 }
 
 .cartPricePerPiece {

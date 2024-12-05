@@ -50,21 +50,25 @@
 }
 
 .productMaufacturer {
-    color: orange;
+    color: #d97222;
     font-size: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
     padding-bottom: 0px;
+    font-weight: 400;
 }
 
 .productName {
-    font-size: 33px;
-    margin-top: 10px;
+    font-size: 40px;
+    margin-bottom: 30px;
     padding-top: 0px;
+    font-weight: 700;
 }
 
 .productDescription {
     font-size: 18px;
     line-height: 190%;
+    color: #74757a;
+    margin-bottom: 35px;
 }
 
 .leftPriceContainer {
@@ -75,25 +79,26 @@
 .currentPrice {
     font-size: 30px;
     padding-left: 5px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .discount {
-    color: orange;
+    color: #d97222;
     font-size: 15px;
     margin-left: 15px;
     padding: 5px;
     border-radius: 5px;
-    background-color: rgb(255, 238, 206); 
+    background-color: #ffefe2; 
 }
 
 .originalPrice {
-    color: gray;
+    color: #74757a;
     font-size: 15px;
     text-decoration: line-through;
 }
 
 .amountContainer {
+    margin-top: 35px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -123,6 +128,10 @@
     cursor: pointer;
 }
 
+.plusButton:hover, .minusButton:hover {
+    opacity: 50%;
+}
+
 .amountNumber {
     font-size: 18px;
     text-align: center;
@@ -135,7 +144,7 @@
     height: 35px;
     color: white;
     font-size: 20px;
-    background-color: orange;
+    background-color: #ff7d1b;
     border: none;
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgba(255, 165, 0, 0.2);
@@ -143,7 +152,7 @@
 }
 
 .addCartButton:hover {
-    box-shadow: 8px 5px 8px orange;
+    opacity: 50%;
 }
 
 .cartIconWhite {

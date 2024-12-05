@@ -7,6 +7,7 @@ import Contact from './features/info/Contact';
 import About from './features/info/About';
 import User from './features/user/User';
 import Cart from './features/cart/Cart.jsx';
+import './App.css';
 
 function App() {
 
